@@ -6,9 +6,9 @@ export function List({ recipes, onSelectRecipe }) {
     <nav className={styles.nav}>
       <span className={styles.title}>Lista przepisów:</span>
       <ul className={styles.list}>
-        {recipes.map(({ id }) => (
+        {recipes.map(({ id, name }) => (
           <li key={id} className={styles.item}>
-            <Button onClick={() => onSelectRecipe(id)}></Button>
+            <Button onClick={() => onSelectRecipe(id)}>{name}</Button>
           </li>
         ))}
       </ul>
