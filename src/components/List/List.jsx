@@ -1,3 +1,4 @@
+import Button from '../Button/Button';
 import styles from './List.module.css';
 
 export function List({ recipes }) {
@@ -7,7 +8,7 @@ export function List({ recipes }) {
       <ul className={styles.list}>
         {recipes.map(({ id }) => (
           <li key={id} className={styles.item}>
-            <button></button>
+            <Button></Button>
           </li>
         ))}
       </ul>
