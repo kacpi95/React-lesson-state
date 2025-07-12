@@ -1,4 +1,5 @@
 import styles from './CookBook.module.css';
+import Article from '../Article/Article';
 
 export default function CookBook({ name, ingredients, description, img }) {
   return (
