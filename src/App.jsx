@@ -16,6 +16,7 @@ function App() {
     <RecipeContext.Provider value={selectedRecipe}>
       <div className={styles.container}>
         <List
+          selectedRecipe={selectedRecipe}
           recipes={recipes}
           onSelectRecipe={(id) => setSelectedRecipeId(id)}
         />
