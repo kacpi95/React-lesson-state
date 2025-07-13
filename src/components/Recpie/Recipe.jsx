@@ -3,19 +3,23 @@ import styles from './Recipe.module.css';
 import { RecipeContext } from '../../context/RecipeContext';
 
 export default function Recipe() {
-  const recipe = useContext(RecipeContext);
+  const { name, img, time, ingredients, description } =
+    useContext(RecipeContext);
 
   return (
     <>
-      <h2>{recipe.name}</h2>
-      <img src={recipe.img} alt='' className={styles.img} />
+      <h2>{name}</h2>
+      <img src={img} alt='' className={styles.img} />
+      <div className={styles.time}>
+        <span>Czas przygotowania: {time}</span>
+      </div>
       <span>Składniki:</span>
       <ul className={styles.list}>
-        {recipe.ingredients.map((ingredient) => (
+        {ingredients.map((ingredient) => (
           <li key={ingredient}>{ingredient}</li>
         ))}
       </ul>
-      <p className={styles.description}>{recipe.description}</p>
+      <p className={styles.description}>{description}</p>
     </>
   );
 }
